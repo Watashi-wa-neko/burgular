@@ -1,0 +1,31 @@
+[{
+  "name": "Сыр",
+  "sum": 0,
+  "image": "cheese.png",
+  "price": 30
+},{
+  "name": "Огурец",
+  "sum": 0,
+  "image": "cucumber.png",
+  "price": 20
+},{
+  "name": "Салат",
+  "sum": 0,
+  "image": "lettuce.png",
+  "price": 10
+},{
+  "name": "Лук",
+  "sum": 0,
+  "image": "onion.png",
+  "price": 10
+},{
+  "name": "Котлета",
+  "sum": 0,
+  "image": "patty.png",
+  "price": 50
+},{
+  "name": "Помидор",
+  "sum": 0,
+  "image": "tomato.png",
+  "price": 20
+}]
