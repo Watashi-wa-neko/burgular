@@ -18,7 +18,7 @@ myApp.controller('basketController', function(burgerFactory){
   this.totalPrice = function(x){
     var initialPrice = 0;
     for(var i = 0, len = x.length; i < len; i++){
-      initialPrice += x[i].price
+      initialPrice += x[i].price * x[i].sum
     }
     return initialPrice;
   };
