@@ -7,12 +7,16 @@ myApp.config(['$qProvider', function ($qProvider) {
 myApp.controller('basketController', function(burgerFactory){
   this.burger = burgerFactory.burger;
 
-  this.removeItem = function(x, y){
+  this.removeSum = function(x, y){
     if(this.burger.indexOf(x) != -1 && this.burger[this.burger.indexOf(x)].sum > 1){
       this.burger[this.burger.indexOf(x)].sum -= 1;
     }else {
       this.burger.splice(y, 1);
     }
+  };
+
+  this.removeItem = function(x, y){
+    this.burger.splice(y, 1);
   };
 
   this.totalPrice = function(x){
@@ -60,11 +64,14 @@ myApp.directive('burgerItem', function(){
     restrict: 'A',
     template: '<div class="burger__item" ng-repeat="item in basket.burger track by $index">' +
       '<div class="row">' +
-        '<div class="col-md-8">' +
+        '<div class="col-md-6">' +
           '<p>{{item.name}}</p>' +
         '</div>' +
         '<div class="col-md-2">' +
           '<p>{{item.sum}}</p>' +
+        '</div>' +
+        '<div class="col-md-2">' +
+          '<button class="btn" ng-click="basket.removeSum(item, $index)">-</button>' +
         '</div>' +
         '<div class="col-md-2">' +
           '<button class="btn" ng-click="basket.removeItem(item, $index)">x</button>' +
